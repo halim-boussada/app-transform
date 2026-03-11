@@ -5,12 +5,12 @@ import { useLocalStorage } from "../hooks/useLocalstorage";
 import "./Dashboard.css"
 import Navbar from "../Components/Navbar";
 import { userContext } from "./userContext";
+
 export default function Dashboard() {
   const [user, setUser] = useState({});
   const [token, setToken] = useLocalStorage("token", "");
  
-   
-
+  
   useEffect(() => {
       async function getConnectedUser() {
     const { data } = await axios.get("https://dummyjson.com/auth/me", {
